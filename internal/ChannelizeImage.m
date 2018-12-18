@@ -20,5 +20,5 @@ assert(isa(mask, 'logical'));
 
 im_channels = {};
 
-im_channels{1} = cast(bsxfun(@times, double(im), mask), 'like', im);
-im_channels{2} = cast(MaskedLocalAbsoluteDeviation(im, mask), 'like', im);
+im_channels{1} = cast(bsxfun(@times, double(im), mask), class(im));
+im_channels{2} = cast(MaskedLocalAbsoluteDeviation(im, mask), class(im));
